@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    #main hr {
+        margin-top: 55px;
+    }
+
+    #main a, #main button, #main div {
+        margin-top: 13px;
+        font-size: 21px;
+    }
+</style>
+
+
+<div id="main">
+    <h4>Upload Files</h4>
+    <hr />
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UploadFiles">
+
+        <p>Upload one or more files:</p>
+        <input type="file" name="files" multiple />
+        <br />
+
+        <input type="submit" value="Upload" />
+
+    </form>
+
+</div>
+

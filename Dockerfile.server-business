@@ -1,0 +1,24 @@
+FROM microsoft/dotnet:2.1-runtime AS base
+WORKDIR /app
+EXPOSE 10031
+
+FROM microsoft/dotnet:2.1-sdk AS build
+WORKDIR /src
+COPY ["IPC.Core/IPC.Core.csproj", "IPC.Core/"]
+COPY ["IPC.Common/IPC.Common.csproj", "IPC.Common/"]
+COPY ["IPC.CacheClient/IPC.CacheClient.csproj", "IPC.CacheClient/"]
+COPY ["IPC.Database/IPC.Database.csproj", "IPC.Database/"]
+COPY ["Server.Business/IPC.BusinessServer.csproj", "Server.Business/"]
+RUN dotnet restore "Server.Business/IPC.BusinessServer.csproj"
+COPY . .
+WORKDIR "/src/Server.Business"
+RUN dotnet build "IPC.BusinessServer.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "IPC.BusinessServer.csproj" -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "IPC.BusinessServer.dll"]
+

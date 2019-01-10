@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{5A933F67-5CD2-4FAA-A89F-93895FDD78A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{AE1E23A1-70D5-4DC9-8FCD-A491925A8E75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F22CCDCA-142A-4BC1-9FEE-1C59E538161A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Files", "_Files", "{AAA9666E-31B8-42E1-9F95-73110EBC55F4}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile.client-file = Dockerfile.client-file
+		Dockerfile.client-web = Dockerfile.client-web
+		Dockerfile.server-business = Dockerfile.server-business
+		Dockerfile.server-cache = Dockerfile.server-cache
+		Dockerfile.server-queue-consumer = Dockerfile.server-queue-consumer
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Common", "IpcPocV2.Common\IpcPocV2.Common.csproj", "{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Data", "IpcPocV2.Data\IpcPocV2.Data.csproj", "{34156FD7-EC2D-4BDF-9725-857B227D8F75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Server.Business", "IpcPocV2.Server.Business\IpcPocV2.Server.Business.csproj", "{E390805B-2B9C-4A47-B82A-F080EB1A663F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Server.Cache", "IpcPocV2.Server.Cache\IpcPocV2.Server.Cache.csproj", "{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Server.QueueConsumer", "IpcPocV2.Server.QueueConsumer\IpcPocV2.Server.QueueConsumer.csproj", "{735DF415-90E5-49AB-801D-248EFCE3CFF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Client.Web", "IpcPocV2.Client.Web\IpcPocV2.Client.Web.csproj", "{5C20397A-C00E-4D35-9739-11D736670EDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IpcPocV2.Client.File", "IpcPocV2.Client.File\IpcPocV2.Client.File.csproj", "{6CBAA678-3E4C-4238-A31D-9C7DB75783B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34156FD7-EC2D-4BDF-9725-857B227D8F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34156FD7-EC2D-4BDF-9725-857B227D8F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34156FD7-EC2D-4BDF-9725-857B227D8F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34156FD7-EC2D-4BDF-9725-857B227D8F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E390805B-2B9C-4A47-B82A-F080EB1A663F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E390805B-2B9C-4A47-B82A-F080EB1A663F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E390805B-2B9C-4A47-B82A-F080EB1A663F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E390805B-2B9C-4A47-B82A-F080EB1A663F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{735DF415-90E5-49AB-801D-248EFCE3CFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735DF415-90E5-49AB-801D-248EFCE3CFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{735DF415-90E5-49AB-801D-248EFCE3CFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{735DF415-90E5-49AB-801D-248EFCE3CFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C20397A-C00E-4D35-9739-11D736670EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C20397A-C00E-4D35-9739-11D736670EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C20397A-C00E-4D35-9739-11D736670EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C20397A-C00E-4D35-9739-11D736670EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBAA678-3E4C-4238-A31D-9C7DB75783B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBAA678-3E4C-4238-A31D-9C7DB75783B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBAA678-3E4C-4238-A31D-9C7DB75783B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBAA678-3E4C-4238-A31D-9C7DB75783B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A2DBF2A-A0BC-4ECA-856D-D2B101CD18BB} = {F22CCDCA-142A-4BC1-9FEE-1C59E538161A}
+		{34156FD7-EC2D-4BDF-9725-857B227D8F75} = {5A933F67-5CD2-4FAA-A89F-93895FDD78A4}
+		{E390805B-2B9C-4A47-B82A-F080EB1A663F} = {5A933F67-5CD2-4FAA-A89F-93895FDD78A4}
+		{983B8BD4-4EC1-47CA-8F7E-9CACD700BA83} = {5A933F67-5CD2-4FAA-A89F-93895FDD78A4}
+		{735DF415-90E5-49AB-801D-248EFCE3CFF0} = {5A933F67-5CD2-4FAA-A89F-93895FDD78A4}
+		{5C20397A-C00E-4D35-9739-11D736670EDF} = {AE1E23A1-70D5-4DC9-8FCD-A491925A8E75}
+		{6CBAA678-3E4C-4238-A31D-9C7DB75783B4} = {AE1E23A1-70D5-4DC9-8FCD-A491925A8E75}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C71791-B566-4C06-A2C8-22F3EB2B5700}
+	EndGlobalSection
+EndGlobal

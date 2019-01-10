@@ -1,0 +1,95 @@
+version: "3"
+services:
+    queue:        
+        container_name: queue
+        hostname: queue
+        image: rabbitmq:management
+        ports:
+           - "5672:5672"
+           - "15672:15672"
+
+    db:        
+        container_name: db
+        hostname: db
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_PASSWORD: ipc*pass
+
+    pgadmin:
+        container_name: dbadmin
+        hostname: dbadmin
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-info@snappyselling.com}
+            PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}    
+        ports:
+            - "${PGADMIN_PORT:-5050}:80"
+        logging:
+            driver: none
+
+    server-cache:  
+        container_name: servercache
+        hostname: servercache
+        build: 
+            context: .
+            dockerfile: Dockerfile.server-cache
+        ports:
+            - "10021:10021"
+        depends_on:
+            - queue
+            - db
+
+    server-business:  
+        container_name: serverbusiness
+        hostname: serverbusiness
+        build: 
+            context: .
+            dockerfile: Dockerfile.server-business
+        ports:
+            - "10031:10031"
+        depends_on:
+            - queue
+            - db
+            - server-cache
+            
+    server-queue-consumer:  
+        container_name: serverqueueconsumer
+        hostname: serverqueueconsumer
+        build: 
+            context: .
+            dockerfile: Dockerfile.server-queue-consumer
+        ports:
+            - "10041:10041"
+        depends_on:
+            - queue
+            - server-business
+
+    client-web:
+        container_name: clientweb
+        hostname: clientweb
+        build: 
+            context: .
+            dockerfile: Dockerfile.client-web
+        ports:
+            - "62693:5001"            
+        depends_on:
+            - server-business
+            - server-cache
+            - queue
+            - db
+
+    client-file:
+        container_name: clientfile
+        hostname: clientfile
+        build: 
+            context: .
+            dockerfile: Dockerfile.client-file
+        ports:
+            - "65016:5001"
+        depends_on:
+            - server-business
+            - server-cache
+            - queue
+            - db

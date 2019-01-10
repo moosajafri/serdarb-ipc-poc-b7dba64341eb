@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IPC.CacheClient\IPC.CacheClient.csproj" />
+    <ProjectReference Include="..\IPC.Common\IPC.Common.csproj" />
+    <ProjectReference Include="..\IPC.Core\IPC.Core.csproj" />
+    <ProjectReference Include="..\IPC.Database\IPC.Database.csproj" />
+  </ItemGroup>
+
+</Project>

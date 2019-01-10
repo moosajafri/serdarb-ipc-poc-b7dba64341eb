@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<IPC.Common.File>
+
+<style>
+    #main hr {
+        margin-top: 55px;
+    }
+
+    #main a, #main button, #main div {
+        margin-top: 13px;
+        font-size: 21px;
+    }
+</style>
+
+<div id="main">
+    <hr />
+
+    @foreach (var item in Model)
+    {
+       <a href="@item.Path" >@item.FileName</a>
+        <br />
+    }
+
+
+</div>
+ 

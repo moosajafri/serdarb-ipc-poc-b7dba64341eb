@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.CacheServer", "Server.Cache\IPC.CacheServer.csproj", "{B04B2936-9020-4E09-92DA-F982B5360BF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.BusinessServer", "Server.Business\IPC.BusinessServer.csproj", "{FCB12930-018D-4968-B4A6-9C8A38BDC20A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.Common", "IPC.Common\IPC.Common.csproj", "{93C6D5C3-CAE2-4A8F-982D-CC96E96B0053}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.Database", "IPC.Database\IPC.Database.csproj", "{3860ED6E-9B38-4787-95AF-AA101783568A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.Web", "IPC.Web\IPC.Web.csproj", "{BC498035-2DF6-4006-BBC5-E249267D59AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.WebFile", "IPC.WebFile\IPC.WebFile.csproj", "{FEB81A50-AF0C-4005-9589-8DC16341C886}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0066EF40-75AF-4662-BC34-62426A432BF9}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile.client-file = Dockerfile.client-file
+		Dockerfile.client-web = Dockerfile.client-web
+		Dockerfile.server-business = Dockerfile.server-business
+		Dockerfile.server-cache = Dockerfile.server-cache
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPC.Core", "IPC.Core", "{0C7F7695-D363-495C-ABFA-AD432D692747}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.Core", "IPC.Core\IPC.Core.csproj", "{846A2715-0034-4961-8FF5-237664D65BFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6BF280B7-FF82-4310-9E59-3BC3B15D5AC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheTest", "CacheTest\CacheTest.csproj", "{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPC.CacheClient", "IPC.CacheClient\IPC.CacheClient.csproj", "{D0F9F8D3-605A-47EE-AEC3-5CF10617D630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseRepoTests", "BaseRepoTests\BaseRepoTests.csproj", "{C0BE0E3A-B49D-4F50-B601-8C00280793E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B04B2936-9020-4E09-92DA-F982B5360BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04B2936-9020-4E09-92DA-F982B5360BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04B2936-9020-4E09-92DA-F982B5360BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04B2936-9020-4E09-92DA-F982B5360BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB12930-018D-4968-B4A6-9C8A38BDC20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB12930-018D-4968-B4A6-9C8A38BDC20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB12930-018D-4968-B4A6-9C8A38BDC20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB12930-018D-4968-B4A6-9C8A38BDC20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C6D5C3-CAE2-4A8F-982D-CC96E96B0053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C6D5C3-CAE2-4A8F-982D-CC96E96B0053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C6D5C3-CAE2-4A8F-982D-CC96E96B0053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C6D5C3-CAE2-4A8F-982D-CC96E96B0053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3860ED6E-9B38-4787-95AF-AA101783568A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3860ED6E-9B38-4787-95AF-AA101783568A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3860ED6E-9B38-4787-95AF-AA101783568A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3860ED6E-9B38-4787-95AF-AA101783568A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC498035-2DF6-4006-BBC5-E249267D59AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC498035-2DF6-4006-BBC5-E249267D59AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC498035-2DF6-4006-BBC5-E249267D59AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC498035-2DF6-4006-BBC5-E249267D59AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB81A50-AF0C-4005-9589-8DC16341C886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB81A50-AF0C-4005-9589-8DC16341C886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB81A50-AF0C-4005-9589-8DC16341C886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB81A50-AF0C-4005-9589-8DC16341C886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846A2715-0034-4961-8FF5-237664D65BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846A2715-0034-4961-8FF5-237664D65BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846A2715-0034-4961-8FF5-237664D65BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846A2715-0034-4961-8FF5-237664D65BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F9F8D3-605A-47EE-AEC3-5CF10617D630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F9F8D3-605A-47EE-AEC3-5CF10617D630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F9F8D3-605A-47EE-AEC3-5CF10617D630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F9F8D3-605A-47EE-AEC3-5CF10617D630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BE0E3A-B49D-4F50-B601-8C00280793E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BE0E3A-B49D-4F50-B601-8C00280793E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BE0E3A-B49D-4F50-B601-8C00280793E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BE0E3A-B49D-4F50-B601-8C00280793E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{846A2715-0034-4961-8FF5-237664D65BFA} = {0C7F7695-D363-495C-ABFA-AD432D692747}
+		{AB1BADC0-5A33-448D-8EB1-9CE2B7AD31D1} = {6BF280B7-FF82-4310-9E59-3BC3B15D5AC1}
+		{C0BE0E3A-B49D-4F50-B601-8C00280793E4} = {6BF280B7-FF82-4310-9E59-3BC3B15D5AC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81C7FA81-EDA8-4DED-AC79-9B3E127D8EF9}
+	EndGlobalSection
+EndGlobal

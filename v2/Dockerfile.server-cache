@@ -1,0 +1,22 @@
+FROM microsoft/dotnet:2.1-runtime AS base
+WORKDIR /app
+EXPOSE 10031
+
+FROM microsoft/dotnet:2.1-sdk AS build
+WORKDIR /src
+COPY ["IpcPocV2.Common/IpcPocV2.Common.csproj", "IpcPocV2.Common/"]
+COPY ["IpcPocV2.Data/IpcPocV2.Data.csproj", "IpcPocV2.Data/"]
+COPY ["IpcPocV2.Server.Cache/IpcPocV2.Server.Cache.csproj", "IpcPocV2.Server.Cache/"]
+RUN dotnet restore "IpcPocV2.Server.Cache/IpcPocV2.Server.Cache.csproj"
+COPY . .
+WORKDIR "/src/IpcPocV2.Server.Cache"
+RUN dotnet build "IpcPocV2.Server.Cache.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "IpcPocV2.Server.Cache.csproj" -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "IpcPocV2.Server.Cache.dll"]
+

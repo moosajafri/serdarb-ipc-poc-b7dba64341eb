@@ -1,0 +1,67 @@
+version: "3"
+services:
+    client-web:
+        container_name: ipc-client-web
+        hostname: ipc-client-web
+        build: 
+            context: .
+            dockerfile: Dockerfile.client-web
+        ports:
+            - "1937:1937"
+            - "44354:44354"
+        depends_on:
+            - server-business
+            - server-cache
+    client-file:        
+        container_name: ipc-client-file
+        hostname: ipc-client-file
+        build: 
+            context: .
+            dockerfile: Dockerfile.client-file
+        ports:
+            - "5001:5001"
+            - "44378:44378"
+        depends_on:
+            - server-business
+            - server-cache
+    server-cache:
+        container_name: ipc-server-cache
+        hostname: ipc-server-cache
+        build: 
+            context: .
+            dockerfile: Dockerfile.server-cache
+        ports:
+            - "10021:10021"
+        depends_on:        
+            - db
+    server-business:  
+        container_name: ipc-server-business
+        hostname: ipc-server-business
+        build: 
+            context: .
+            dockerfile: Dockerfile.server-business
+        ports:
+            - "10031:10031"
+        depends_on:
+            - server-cache
+            - queue
+            - db
+    queue:
+        image: rabbitmq
+        container_name: ipc-queue
+        hostname: ipc-queue
+        image: rabbitmq:management
+        environment:
+           - RABBITMQ_DEFAULT_USER = user
+           - RABBITMQ_DEFAULT_PASS = pass
+        ports:
+           - "5672:5672"
+           - "15672:15672"
+    db:
+        image: postgres
+        container_name: ipc-db
+        hostname: ipc-db
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_PASSWORD: ipc*pass

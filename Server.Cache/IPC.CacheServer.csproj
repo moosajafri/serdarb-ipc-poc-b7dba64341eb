@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IPC.Common\IPC.Common.csproj" />
+    <ProjectReference Include="..\IPC.Core\IPC.Core.csproj" />
+    <ProjectReference Include="..\IPC.Database\IPC.Database.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    #main hr {
+        margin-top: 55px;
+    }
+
+    #main a, #main button, #main div {
+        margin-top: 13px;
+        font-size: 21px;
+    }
+</style>
+
+<div id="main">
+    <hr />
+    <div style="margin-top:25px;"></div>
+    <p>Welcome to IPC Testing site!</p>
+
+</div>
+
+<script>
+    function doPost(btn, div, url) {
+
+        document.getElementById(btn).addEventListener('click', function (btn) {
+            var request = new XMLHttpRequest();
+            request.open("POST", url, true);
+            request.onreadystatechange = function () {
+                if (this.readyState === 4
+                    && this.status === 200) {
+
+                    document.getElementById(div).innerHTML = JSON.stringify(this.responseText);
+                }
+            };
+            request.send({});
+        });
+    }
+
+    doPost('btnGet', 'divGet', '/Home/GetCustomer');
+    doPost('btnInsert', 'divInsert', '/Home/InsertCustomer');
+</script>
+

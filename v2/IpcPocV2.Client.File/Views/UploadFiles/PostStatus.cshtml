@@ -1,0 +1,29 @@
+﻿@model List<IpcPocV2.Common.Models.Command.CacheResponseBase>
+@{
+    ViewData["Title"] = "File Upload Status";
+}
+
+<h1>File Upload Status</h1>
+<div class="row">
+    <section>
+        <form>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @foreach (var r in Model)
+                    {
+                        if (r.IsOK)
+                        {
+                            <p>File  uploaded successfully</p>
+                        }
+                        else
+                        {
+                            <p>File  was not uploaded</p>
+                        }
+                    }
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+<hr />
+
